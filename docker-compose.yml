@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  kali:
+    build: .
+    tty: true
+  dvwa:
+    image: vulnerables/web-dvwa
+    ports:
+      - "80:80"

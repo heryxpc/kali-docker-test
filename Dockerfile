@@ -1,11 +1,8 @@
-FROM kalilinux/kali
+FROM kalilinux/kali-rolling
 
-RUN apt-get update && \
-apt-get upgrade && \
-apt-get install -y zsh zsh-syntax-highlighting zsh-autosuggestions iproute2 --no-install-recommends
-
-RUN apt-get install -y kali-linux-core --no-install-recommends
+RUN apt -y update && apt -y upgrade
+RUN apt install -y zsh zsh-syntax-highlighting zsh-autosuggestions --no-install-recommends
+RUN apt install -y iproute2 --no-install-recommends
+RUN apt install -y nmap sqlmap metasploit-framework --no-install-recommends
 
 ENTRYPOINT ["/bin/zsh"]
-
-
